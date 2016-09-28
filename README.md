@@ -3,4 +3,4 @@
 * Ensure you've commented #HWADDR in /etc/sysconfig/network-scripts/ifcfg-<wifi>
 * requires sudo/root perms for /dev/urandom and ifconfig
 
-**Usage: sh /path/2/spoofer/spoofer <NIC> <TIME-INTERVAL>**
+~~usage: sh /path/2/spoofer/spoofer <NIC> <TIME-INTERVAL>~~
