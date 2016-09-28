@@ -1,10 +1,13 @@
 #!/bin/bash
 # Panera Bread wifi hack
+# enter the interface name as the 1st argument you want to spoof with the second argument being the time interval in seconds for spoofage. 
 
+NIC=$1
+TIME=$2
 magic=`tr -dc A-F0-9 < /dev/urandom | head -c 10 | sed -r 's/(..)/\1:/g;s/:$//;s/^/02:/'`
 
 for (( ; ; ))
 do
-   sleep 5
-   sudo ifconfig wlp3s0 down; sudo ifconfig wlp3s0 hw ether $magic ; sudo ifconfig wlp3s0 up
+   sleep $TIME
+   ifconfig $NIC down; ifconfig $NIC hw ether $magic ; ifconfig $NIC up
 done
